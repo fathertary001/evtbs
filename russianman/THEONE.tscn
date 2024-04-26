@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgi55wm8krh5i"]
+
+[ext_resource type="PackedScene" uid="uid://b06eocvsryy1w" path="res://deliverer.tscn" id="1_qfyxg"]
+[ext_resource type="Texture2D" uid="uid://cfndd3uqdsa7p" path="res://campus001.png" id="2_qgl7x"]
+[ext_resource type="Texture2D" uid="uid://clcemeqpkprmh" path="res://New Piskel.png" id="3_wwbkw"]
+[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="4_ds6ow"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrm3l"]
+atlas = ExtResource("3_wwbkw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klcyb"]
+atlas = ExtResource("3_wwbkw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2i6g8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrm3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klcyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2nxx"]
+radius = 0.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_qfyxg")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_left = -1384.0
+offset_top = -440.0
+offset_right = -232.0
+offset_bottom = 208.0
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="Campus001" type="Sprite2D" parent="ColorRect"]
+position = Vector2(576, 320)
+scale = Vector2(1.63533, 1.45351)
+texture = ExtResource("2_qgl7x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(-376, -408)
+scale = Vector2(1.25, 1)
+sprite_frames = SubResource("SpriteFrames_2i6g8")
+autoplay = "default"
+script = ExtResource("4_ds6ow")
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+position = Vector2(-6.4, 16)
+scale = Vector2(0.8, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="AnimatedSprite2D/Camera2D"]
+position = Vector2(304, 352)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Camera2D/CharacterBody2D"]
+position = Vector2(-296, -368)
+scale = Vector2(1.25, 1)
+shape = SubResource("CircleShape2D_q2nxx")

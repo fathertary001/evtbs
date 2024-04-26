@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://nji3aqoy7ej8"]
+
+[ext_resource type="Script" path="res://mc.gd" id="1_ls40t"]
+[ext_resource type="Texture2D" uid="uid://clcemeqpkprmh" path="res://New Piskel.png" id="1_xirgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjfsu"]
+size = Vector2(4.875, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrm3l"]
+atlas = ExtResource("1_xirgk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klcyb"]
+atlas = ExtResource("1_xirgk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxd1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrm3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klcyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k6o88"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-32, 0)
+script = ExtResource("1_ls40t")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-5.70313, 67.8334)
+scale = Vector2(1.25, 1)
+shape = SubResource("RectangleShape2D_qjfsu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 32)
+scale = Vector2(1.25, 1)
+sprite_frames = SubResource("SpriteFrames_qxd1y")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.65625, 67.3889)
+scale = Vector2(1.25, 1)
+shape = SubResource("CircleShape2D_k6o88")

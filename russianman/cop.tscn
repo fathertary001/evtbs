@@ -1,0 +1,72 @@
+[gd_scene load_steps=12 format=3 uid="uid://dxk1h1ijb8wmn"]
+
+[ext_resource type="Script" path="res://cop.gd" id="1_q8cwa"]
+[ext_resource type="Texture2D" uid="uid://ekb2g8h412k8" path="res://cop.jpg" id="1_wq7gp"]
+[ext_resource type="Script" path="res://Node2D.gd" id="3_tnxyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd45h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwnej"]
+atlas = ExtResource("1_wq7gp")
+region = Rect2(54, 0, 54, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_doake"]
+atlas = ExtResource("1_wq7gp")
+region = Rect2(108, 0, 54, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37wh3"]
+atlas = ExtResource("1_wq7gp")
+region = Rect2(162, 0, 54, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qayb"]
+atlas = ExtResource("1_wq7gp")
+region = Rect2(162, 79, 54, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8l0w"]
+atlas = ExtResource("1_wq7gp")
+region = Rect2(216, 79, 54, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t08if"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwnej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_doake")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37wh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qayb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8l0w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4a25n"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_q8cwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hd45h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(168, 152)
+sprite_frames = SubResource("SpriteFrames_t08if")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4a25n")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="Game" type="Node2D" parent="."]
+script = ExtResource("3_tnxyu")

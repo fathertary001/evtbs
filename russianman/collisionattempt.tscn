@@ -1,0 +1,263 @@
+[gd_scene load_steps=20 format=3 uid="uid://bc6ivruu5awuh"]
+
+[ext_resource type="Texture2D" uid="uid://cfndd3uqdsa7p" path="res://campus001.png" id="1_fo37s"]
+[ext_resource type="Texture2D" uid="uid://bbe73gk7te3rb" path="res://black.png" id="2_iruey"]
+[ext_resource type="Texture2D" uid="uid://b2ok70lx4vbln" path="res://biege.jpg" id="3_uy0kv"]
+[ext_resource type="Texture2D" uid="uid://clcemeqpkprmh" path="res://New Piskel.png" id="4_fn56y"]
+[ext_resource type="Script" path="res://AnimatedSprite2D.gd" id="5_58s1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5p02"]
+size = Vector2(522.667, 371.014)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mstpo"]
+size = Vector2(223.97, 500.722)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_oxh6k"]
+a = Vector2(-3450.95, 0.000976563)
+b = Vector2(0.00390625, -508.278)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_cgn85"]
+a = Vector2(-1488.39, 345.233)
+b = Vector2(-338.076, -671.325)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hbr3c"]
+a = Vector2(575.158, -1016.56)
+b = Vector2(-10352.8, 1270.7)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_r7yco"]
+a = Vector2(-3213.87, -163.046)
+b = Vector2(4838.34, -1433.74)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_klhis"]
+a = Vector2(-3213.87, 599.373)
+b = Vector2(8289.29, -1687.88)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_fegqy"]
+a = Vector2(4838.35, 4665.6)
+b = Vector2(237.082, 345.232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1583b"]
+size = Vector2(238.466, 382.887)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3cm23"]
+size = Vector2(480.074, 480.395)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrm3l"]
+atlas = ExtResource("4_fn56y")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klcyb"]
+atlas = ExtResource("4_fn56y")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxo2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrm3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klcyb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oaokw"]
+radius = 0.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background info" type="Node2D" parent="."]
+position = Vector2(-808, -116)
+scale = Vector2(1.64103, 1.46939)
+
+[node name="ColorRect" type="ColorRect" parent="background info"]
+custom_minimum_size = Vector2(1152, 648)
+offset_left = -351.0
+offset_top = -220.5
+offset_right = 801.0
+offset_bottom = 427.5
+color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+
+[node name="Campus001" type="Sprite2D" parent="background info"]
+texture = ExtResource("1_fo37s")
+
+[node name="Sprite2D" type="Sprite2D" parent="background info/Campus001"]
+
+[node name="Black3" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(6.10352e-05, -314.417)
+scale = Vector2(1.37109, 0.366862)
+texture = ExtResource("2_iruey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Black3"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Black3/StaticBody2D"]
+position = Vector2(-808.014, 598.435)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("RectangleShape2D_c5p02")
+
+[node name="Black2" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(-435.094, -91.1945)
+scale = Vector2(0.31897, 1.20692)
+texture = ExtResource("2_iruey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Black2"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Black2/StaticBody2D"]
+position = Vector2(-340.674, 532.282)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("RectangleShape2D_mstpo")
+
+[node name="Biege5" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(199.875, -95.2778)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege5"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege5/StaticBody2D"]
+position = Vector2(-802, 528)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_oxh6k")
+
+[node name="Biege" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(312, -166.056)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege"]
+position = Vector2(0.000244141, -254.139)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege/StaticBody2D"]
+position = Vector2(-802, 528)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_cgn85")
+
+[node name="Biege2" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(297.375, -138.833)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege2"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege2/StaticBody2D"]
+position = Vector2(-802, 528)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_hbr3c")
+
+[node name="Biege3" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(185.25, -84.3889)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege3"]
+position = Vector2(-4601.26, 762.42)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege3/StaticBody2D"]
+position = Vector2(-5836.96, 964.936)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_r7yco")
+
+[node name="Biege4" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(263.25, -122.5)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege4"]
+position = Vector2(-10352.8, 6353.49)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege4/StaticBody2D"]
+position = Vector2(-802, 528)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_klhis")
+
+[node name="Biege6" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(282.75, -138.833)
+scale = Vector2(0.00847593, 0.0214231)
+texture = ExtResource("3_uy0kv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Biege6"]
+position = Vector2(-16679.6, 7878.33)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Biege6/StaticBody2D"]
+position = Vector2(-802, 528)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("SegmentShape2D_fegqy")
+
+[node name="Black" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(438.75, -100.722)
+scale = Vector2(0.347534, 1.22287)
+texture = ExtResource("2_iruey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Black"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Black/StaticBody2D"]
+position = Vector2(-1252.79, 618.156)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("RectangleShape2D_1583b")
+
+[node name="Black4" type="Sprite2D" parent="background info/Campus001/Sprite2D"]
+z_index = 1
+position = Vector2(3.65625, 438.278)
+scale = Vector2(2.0614, 0.861328)
+texture = ExtResource("2_iruey")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="background info/Campus001/Sprite2D/Black4"]
+position = Vector2(237.081, -417.185)
+scale = Vector2(0.295612, 0.790123)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background info/Campus001/Sprite2D/Black4/StaticBody2D"]
+position = Vector2(-844, 512)
+scale = Vector2(3.38281, 1.26563)
+shape = SubResource("RectangleShape2D_3cm23")
+
+[node name="player stuff" type="Node2D" parent="."]
+z_index = 3
+position = Vector2(-848, -104)
+scale = Vector2(1.64103, 1.46939)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player stuff"]
+z_index = 1
+position = Vector2(-376, -408)
+scale = Vector2(1.25, 1)
+sprite_frames = SubResource("SpriteFrames_qxo2x")
+autoplay = "default"
+script = ExtResource("5_58s1s")
+
+[node name="Camera2D" type="Camera2D" parent="player stuff/AnimatedSprite2D"]
+position = Vector2(-6.4, 16)
+scale = Vector2(0.8, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="player stuff/AnimatedSprite2D"]
+position = Vector2(236.8, 368)
+scale = Vector2(0.8, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player stuff/AnimatedSprite2D/CharacterBody2D"]
+position = Vector2(-296, -368)
+scale = Vector2(1.25, 1)
+shape = SubResource("CircleShape2D_oaokw")
